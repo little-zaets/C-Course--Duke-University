@@ -2,29 +2,64 @@
 #include <stdlib.h>
 //I've provided "min" and "max" functions in
 //case they are useful to you
-int min (int a, int b) {
-  if (a < b) {
+int min(int a, int b)
+{
+  if (a < b)
+  {
     return a;
   }
   return b;
 }
-int max (int a, int b) {
-  if (a > b) {
+int max(int a, int b)
+{
+  if (a > b)
+  {
     return a;
   }
   return b;
 }
 
 //Declare your rectangle structure here!
+typedef struct rect_t
+{
+  int x;
+  int y;
+  int width;
+  int height;
+} rectangle; 
 
-
-rectangle canonicalize(rectangle r) {
+rectangle canonicalize(rectangle r)
+{
+  if ( r.width < 0 )
+    {
+      r.width *= -1;
+      r.x -= r.width;
+    }
+  if ( r.height < 0 )
+    {
+      r.height *= -1;
+      r.y -= r.height; 
+    }
   //WRITE THIS FUNCTION
   return r;
 }
-rectangle intersection(rectangle r1, rectangle r2) {
+
+rectangle intersection(rectangle r1, rectangle r2)
+{
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+  rectangle ans;
+  ans.x = max(r1.x, r2.x);
+  ans.y = max(r1.y, r2.y);
+  ans.width = min(r1.width + r1.x, r2.width + r2.x) - ans.x;
+  ans.height = min(r1.height + r1.y, r2.height + r2.y) - ans.y;
+  if ( r1.x + r1.width < r2.x || r1.y + r1.height < r2.y || r1.x > r2.x + r2.width || r1.y > r2.y + r2.height )
+  {
+    ans.width = 0;
+    ans.height = 0;
+  }
+  return ans;
   //WRITE THIS FUNCTION
-  return r1;
 }
 
 //You should not need to modify any code below this line
