@@ -146,13 +146,13 @@ void testChar_to_card(char suit)
 void testRanking()
 {
   printf("Test Ranking\n");
-  TEST(0 == strcmp(ranking_to_string(STRAIGHT_FLUSH), "Straight Flush"));
-  TEST(0 == strcmp(ranking_to_string(FOUR_OF_A_KIND), "Four of a Kind"));
-  TEST(0 == strcmp(ranking_to_string(FULL_HOUSE),"Full House"));
-  TEST(0 == strcmp(ranking_to_string(FLUSH), "Flush"));
-  TEST(0 == strcmp(ranking_to_string(STRAIGHT), "Straight"));
-  TEST(0 == strcmp(ranking_to_string(THREE_OF_A_KIND), "Three of a Kind"));
-  TEST(0 == strcmp(ranking_to_string(TWO_PAIR), "Two Pair"));
-  TEST(0 == strcmp(ranking_to_string(PAIR), "Pair"));
-  TEST(0 == strcmp(ranking_to_string(NOTHING), "Nothing"));
+  TEST(0 == strcmp(ranking_to_string(STRAIGHT_FLUSH), "STRAIGHT FLUSH"));
+  TEST(0 == strcmp(ranking_to_string(FOUR_OF_A_KIND), "FOUR OF A KIND"));
+  TEST(0 == strcmp(ranking_to_string(FULL_HOUSE),"FULL HOUSE"));
+  TEST(0 == strcmp(ranking_to_string(FLUSH), "FLUSH"));
+  TEST(0 == strcmp(ranking_to_string(STRAIGHT), "STRAIGHT"));
+  TEST(0 == strcmp(ranking_to_string(THREE_OF_A_KIND), "THREE OF A KIND"));
+  TEST(0 == strcmp(ranking_to_string(TWO_PAIR), "TWO PAIR"));
+  TEST(0 == strcmp(ranking_to_string(PAIR), "PAIR"));
+  TEST(0 == strcmp(ranking_to_string(NOTHING), "NOTHING"));
 }
