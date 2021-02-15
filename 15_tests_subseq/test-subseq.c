@@ -23,7 +23,6 @@ int main(void)
   else
     {
       printf("FAILED\n");
-      failed++;
       return EXIT_FAILURE;
     }
   if ( 0 ==  maxSeq(array, 0) )
@@ -34,7 +33,6 @@ int main(void)
   else
     {
       printf("FAILED\n");
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array, 4);
@@ -45,8 +43,7 @@ int main(void)
     }
   else
     {
-      printf("FAILED\n");
-      failed++;
+      printf("FAILED\nresult = %ld\n",result);
       return EXIT_FAILURE;
     }
   result = maxSeq(array1, 5);  
@@ -58,7 +55,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n",result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array2, 7);
@@ -70,7 +66,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array2, 6);
@@ -82,7 +77,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array3, 1);
@@ -94,7 +88,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array4, 8);
@@ -106,7 +99,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array5, 5);
@@ -118,7 +110,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   result = maxSeq(array6, 0);
@@ -130,7 +121,6 @@ int main(void)
   else
     {
       printf("FAILED\nresult = %ld\n", result);
-      failed++;
       return EXIT_FAILURE;
     }
   printf("Total tests passed: %d out of 10.\n", passed);
