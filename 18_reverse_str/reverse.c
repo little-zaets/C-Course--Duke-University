@@ -9,7 +9,6 @@ void reverse(char *str)
   char temp;
   size_t size;
   assert(str);
-  char *ptr = str;
   size = strlen(str);
   for(i = 0; i < (size / 2); ++i)
     {
