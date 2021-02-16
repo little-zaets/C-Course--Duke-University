@@ -1,9 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
-void reverse(char * str) {
-  //WRITE ME!
+void reverse(char *str)
+{
+  size_t i;
+  char temp;
+  size_t size = strlen(str);
+  char *ptr = str;
+  for(i = 0; i < (size / 2); ++i)
+    {
+      temp = str[i];
+      str[i] = str[size - 1 - i];
+      str[size - 1 - i] = temp;
+    }
+  str = ptr;
 }
 
 int main(void) {
@@ -18,6 +30,7 @@ int main(void) {
   for (int i = 0; i < 7; i++) {
     reverse(array[i]);
     printf("%s\n", array[i]);
+    //printf("jfkdjfkldsj]n");
   }
   return EXIT_SUCCESS;
 }
