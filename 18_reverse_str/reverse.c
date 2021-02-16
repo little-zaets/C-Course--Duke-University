@@ -7,7 +7,12 @@ void reverse(char *str)
 {
   size_t i;
   char temp;
-  size_t size = strlen(str);
+  size_t size;
+  if ( NULL == str )
+    {
+      return;
+    }
+  size = strlen(str);
   if ( NULL != str )
     {
       for(i = 0; i < (size / 2); ++i)
