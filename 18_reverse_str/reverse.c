@@ -7,15 +7,16 @@ void reverse(char *str)
 {
   size_t i;
   char temp;
-  size_t size = strlen(str);
+  size_t size;
+  assert(str);
   char *ptr = str;
+  size = strlen(str);
   for(i = 0; i < (size / 2); ++i)
     {
       temp = str[i];
       str[i] = str[size - 1 - i];
       str[size - 1 - i] = temp;
     }
-  str = ptr;
 }
 
 int main(void) {
