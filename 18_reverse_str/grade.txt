@@ -1,11 +1,11 @@
-Grading at Tue Feb 16 01:43:16 UTC 2021
+Grading at Tue Feb 16 01:53:48 UTC 2021
 Attempting to compile  reverse.c
 Your file matched the expected output
 Your output matched what we expected
 Removing your main() and replacing it with our own to run more tests...
 #################################################
 testcase2:
-double free or corruption
+ - Your program segfaulted.
 your code failed the testcase
 #################################################
 testcase3:
