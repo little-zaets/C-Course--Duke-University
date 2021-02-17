@@ -7,11 +7,11 @@
  * ie: 1's 31st bit is 1
  */
 int getNthBit(uint32_t number, int bit) {
-  if (bit <0 || bit >= 32) {
+  if (0 > bit || bit >= 32) {
     printf("Bit %d is invalid\n", bit);
     exit (EXIT_FAILURE);
   }
-  return (number & (1<<bit)) != 0;
+  return !!(number & (1<<bit));
 }
 
 /*
@@ -35,8 +35,29 @@ int getNthBit(uint32_t number, int bit) {
  *   That is, bits[0] should be bit 31 of nums[0], bits[1] should
  *   be bit 30 of nums[0], and so on.
  */
-void numToBits(uint32_t * nums, int nNums, int * bits, int nBits) {
-
+void numToBits(uint32_t * nums, int nNums, int * bits, int nBits)
+{
+  size_t i;
+  size_t j;
+  size_t totalBits = nNums * 32;
+  if ( NULL == nums )
+    {
+      EXIT_FAILURE;
+    }
+  if ( nBits != totalBits )
+    {
+      printf("Invalid call to numToBits! nBits is %d, nNums is %d\n", nBits, nNums);
+      return;
+    }
+  for(i = 0; i < nNums; i++)
+    {
+      
+      for(j = 32; j > 0; j--)
+	{
+	  *bits = getNthBit(nums[i], j - 1);
+	  ++bits;
+	}
+    }
 }
 
 void doTest(uint32_t * nums, int n) {
