@@ -1,0 +1,64 @@
+Grading at Sun Feb 21 22:01:53 UTC 2021
+**Testing broken implementation 10 **
+-------------------------------------
+
+Failed: x=4294967295, y=32, expected=1, actual=4294967295
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+Failed: x=4294967295, y=32, expected=1, actual=1855011585
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+Failed: x=0, y=1, expected=0, actual=1
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+Failed: x=0, y=1, expected=0, actual=1
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+Failed: x=0, y=0, expected=1, actual=0
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+Failed: x=4294967295, y=1, expected=4294967295, actual=65535
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Failed: x=4294967295, y=32, expected=1, actual=2147483648
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+Failed: x=0, y=1, expected=0, actual=2
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+Failed: x=0, y=1, expected=0, actual=3
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+Failed: x=4294967295, y=32, expected=1, actual=4294967264
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+Failed: x=1, y=1, expected=1, actual=0
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
