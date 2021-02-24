@@ -24,7 +24,6 @@ int main()
   testPow(1, 1, 1); 
   testPow(-1, 32, 1);
   testPow(-1, 1, -1);
-  testPow(2, -1, 0);
   testPow(2, 32, 0); 
   testPow(2, 0, 1);
 
