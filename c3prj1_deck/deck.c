@@ -50,22 +50,12 @@ void shuffle(deck_t *d)
 void assert_full_deck(deck_t *d)
 {
   unsigned i;
-  unsigned j;
   int contains_card;
-  int duplicate = 0;
   assert(d);
   for(i = 0; i < d->n_cards; ++i)
     {
       assert_card_valid(*(d->cards[i]));
       contains_card = deck_contains(d, *(d->cards[i]));
       assert(contains_card && "Card does not exist in deck");
-      for(j = 1; j < d->n_cards; ++j)
-	{
-	  if ( d->cards[i]->value == d->cards[j]->value && d->cards[i]->suit == d->cards[j]->suit  )
-	    {
-	      ++duplicate;
-	    }
-	}
-      assert(0 == duplicate);
     } 
 }
