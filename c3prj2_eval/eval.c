@@ -54,6 +54,7 @@ suit_t flush_suit(deck_t *hand)
 
 unsigned get_largest_element(unsigned *arr, size_t n)
 {
+  printf("n=%ld\n", n);
   unsigned i = 0;
   unsigned largest = 0;
   assert(arr);
@@ -78,29 +79,34 @@ size_t get_match_index(unsigned *match_counts, size_t n, unsigned n_of_akind)
   for(i = 0; i < n; ++i)
     {
       if ( n_of_akind == match_counts[i] )
-	{
-	  return i;
-	}
+	    {
+	      return i;
+	    }
     }
   assert(0 && "n_of_akind is not present");
   return 0;
 }
 
 ssize_t find_secondary_pair(deck_t *hand,
-			     unsigned *match_counts,
-			     size_t match_idx)
+			                      unsigned *match_counts,
+			                      size_t match_idx)
 {
   ssize_t i;
+  ssize_t count = 1;
   assert(hand);
   assert(match_counts);
-  for(i = 0; i < hand->n_cards; ++i)
+  for(i = 0; i < hand->n_cards - 1; ++i)
+  {
+    if ( hand->cards[i]->value == hand->cards[i + 1]->value && 
+          hand->cards[i]->value != hand->cards[match_idx]->value )
     {
-      if ( match_counts[hand->cards[i]->value] > 1 &&
-	   match_counts[hand->cards[i]->value] != match_counts[hand->cards[match_idx]->value] )
-	{
-	  return i;
-	}
+      ++count;
+      if ( count > 1 && match_counts[i] == count )
+      {
+        return i;
+      }
     }
+  }
   return -1;
 }
 
