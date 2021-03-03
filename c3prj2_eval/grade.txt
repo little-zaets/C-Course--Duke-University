@@ -29,7 +29,7 @@ Valgrind returned an error status
 ==416==    at 0x401BED: build_hand_from_match (eval.c:211)
 ==416==    by 0x402640: evaluate_hand (eval.c:388)
 ==416==    by 0x402A28: describe_hand (test-eval.c:68)
-==416==    by 0x402C73: main (test-eval.c:119)
+	   ==416==    by 0x402C73: main (test-eval.c:119)
 ==416== 
 ==416== Conditional jump or move depends on uninitialised value(s)
 ==416==    at 0x401BF1: build_hand_from_match (eval.c:211)

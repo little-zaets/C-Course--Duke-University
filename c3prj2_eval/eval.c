@@ -206,7 +206,7 @@ hand_eval_t build_hand_from_match(deck_t *hand,
   {
     ans.cards[j] = hand->cards[i];
   }
-  for(i = 0; j < sizeof(ans.cards)/sizeof(card_t*); ++i)
+  for(i = 0; j < hand->n_cards - 1; ++i)
   {
     if ( hand->cards[i]->value != ans.cards[0]->value )
 	  {
