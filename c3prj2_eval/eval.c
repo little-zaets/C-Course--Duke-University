@@ -54,7 +54,6 @@ suit_t flush_suit(deck_t *hand)
 
 unsigned get_largest_element(unsigned *arr, size_t n)
 {
-  printf("n=%ld\n", n);
   unsigned i = 0;
   unsigned largest = 0;
   assert(arr);
@@ -228,8 +227,6 @@ int compare_hands(deck_t *hand1, deck_t *hand2)
   qsort(hand2->cards, hand2->n_cards, sizeof(*(hand1->cards)), card_ptr_comp);
   hand_1 = evaluate_hand(hand1);
   hand_2 = evaluate_hand(hand2);
-  printf("hand1 ranking: %d\n", hand_1.ranking);
-  printf("hand2 ranking: %d\n", hand_2.ranking);
   if ( hand_1.ranking > hand_2.ranking || hand_1.ranking < hand_2.ranking )
   {
     return hand_2.ranking - hand_1.ranking;
