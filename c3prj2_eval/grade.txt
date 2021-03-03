@@ -1,4 +1,4 @@
-Grading at Wed Mar  3 11:32:34 UTC 2021
+Grading at Wed Mar  3 12:02:08 UTC 2021
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -7,156 +7,144 @@ cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o cards.o cards.c
 gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
 Testcase 1: Trying hands with nothing
 Valgrind returned an error status
-==416== Memcheck, a memory error detector
-==416== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==416== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==416== Command: ./test-eval inp.1.txt
-==416== Parent PID: 415
-==416== 
-==416== Use of uninitialised value of size 8
-==416==    at 0x401BED: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x402A28: describe_hand (test-eval.c:68)
-==416==    by 0x402C53: main (test-eval.c:116)
-==416== 
-==416== Conditional jump or move depends on uninitialised value(s)
-==416==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x402A28: describe_hand (test-eval.c:68)
-==416==    by 0x402C53: main (test-eval.c:116)
-==416== 
-==416== Use of uninitialised value of size 8
-==416==    at 0x401BED: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x402A28: describe_hand (test-eval.c:68)
-	   ==416==    by 0x402C73: main (test-eval.c:119)
-==416== 
-==416== Conditional jump or move depends on uninitialised value(s)
-==416==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x402A28: describe_hand (test-eval.c:68)
-==416==    by 0x402C73: main (test-eval.c:119)
-==416== 
-==416== Use of uninitialised value of size 8
-==416==    at 0x401BED: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x401CFD: compare_hands (eval.c:228)
-==416==    by 0x402CC8: main (test-eval.c:124)
-==416== 
-==416== Conditional jump or move depends on uninitialised value(s)
-==416==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x401CFD: compare_hands (eval.c:228)
-==416==    by 0x402CC8: main (test-eval.c:124)
-==416== 
-==416== Use of uninitialised value of size 8
-==416==    at 0x401BED: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x401D58: compare_hands (eval.c:229)
-==416==    by 0x402CC8: main (test-eval.c:124)
-==416== 
-==416== Conditional jump or move depends on uninitialised value(s)
-==416==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==416==    by 0x402640: evaluate_hand (eval.c:388)
-==416==    by 0x401D58: compare_hands (eval.c:229)
-==416==    by 0x402CC8: main (test-eval.c:124)
-==416== 
-==416== 
-==416== HEAP SUMMARY:
-==416==     in use at exit: 0 bytes in 0 blocks
-==416==   total heap usage: 278 allocs, 278 frees, 13,728 bytes allocated
-==416== 
-==416== All heap blocks were freed -- no leaks are possible
-==416== 
-==416== For counts of detected and suppressed errors, rerun with: -v
-==416== Use --track-origins=yes to see where uninitialised values come from
-==416== ERROR SUMMARY: 40 errors from 8 contexts (suppressed: 0 from 0)
+==662== Memcheck, a memory error detector
+==662== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==662== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==662== Command: ./test-eval inp.1.txt
+==662== Parent PID: 661
+==662== 
+==662== Use of uninitialised value of size 8
+==662==    at 0x401BED: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x402A33: describe_hand (test-eval.c:68)
+==662==    by 0x402C5E: main (test-eval.c:116)
+==662== 
+==662== Conditional jump or move depends on uninitialised value(s)
+==662==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x402A33: describe_hand (test-eval.c:68)
+==662==    by 0x402C5E: main (test-eval.c:116)
+==662== 
+==662== Use of uninitialised value of size 8
+==662==    at 0x401BED: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x402A33: describe_hand (test-eval.c:68)
+==662==    by 0x402C7E: main (test-eval.c:119)
+==662== 
+==662== Conditional jump or move depends on uninitialised value(s)
+==662==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x402A33: describe_hand (test-eval.c:68)
+==662==    by 0x402C7E: main (test-eval.c:119)
+==662== 
+==662== Use of uninitialised value of size 8
+==662==    at 0x401BED: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x401D08: compare_hands (eval.c:228)
+==662==    by 0x402CD3: main (test-eval.c:124)
+==662== 
+==662== Conditional jump or move depends on uninitialised value(s)
+==662==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x401D08: compare_hands (eval.c:228)
+==662==    by 0x402CD3: main (test-eval.c:124)
+==662== 
+==662== Use of uninitialised value of size 8
+==662==    at 0x401BED: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x401D63: compare_hands (eval.c:229)
+==662==    by 0x402CD3: main (test-eval.c:124)
+==662== 
+==662== Conditional jump or move depends on uninitialised value(s)
+==662==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==662==    by 0x40264B: evaluate_hand (eval.c:388)
+==662==    by 0x401D63: compare_hands (eval.c:229)
+==662==    by 0x402CD3: main (test-eval.c:124)
+==662== 
+==662== Use of uninitialised value of size 8
+==662==    at 0x400C01: print_hand (deck.c:10)
+==662==    by 0x402A7E: describe_hand (test-eval.c:74)
+==662==    by 0x402C5E: main (test-eval.c:116)
+==662== 
+==662== Invalid read of size 8
+==662==    at 0x400C01: print_hand (deck.c:10)
+==662==    by 0x402A7E: describe_hand (test-eval.c:74)
+==662==    by 0x402C5E: main (test-eval.c:116)
+==662==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==662== 
+==662== 
+==662== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==662==  Access not within mapped region at address 0x0
+==662==    at 0x400C01: print_hand (deck.c:10)
+==662==    by 0x402A7E: describe_hand (test-eval.c:74)
+==662==    by 0x402C5E: main (test-eval.c:116)
+==662==  If you believe this happened as a result of a stack
+==662==  overflow in your program's main thread (unlikely but
+==662==  possible), you can try to increase the size of the
+==662==  main thread stack using the --main-stacksize= flag.
+==662==  The main thread stack size used in this run was 8388608.
+==662== 
+==662== HEAP SUMMARY:
+==662==     in use at exit: 864 bytes in 16 blocks
+==662==   total heap usage: 202 allocs, 186 frees, 12,472 bytes allocated
+==662== 
+==662== LEAK SUMMARY:
+==662==    definitely lost: 0 bytes in 0 blocks
+==662==    indirectly lost: 0 bytes in 0 blocks
+==662==      possibly lost: 0 bytes in 0 blocks
+==662==    still reachable: 864 bytes in 16 blocks
+==662==         suppressed: 0 bytes in 0 blocks
+==662== Rerun with --leak-check=full to see details of leaked memory
+==662== 
+==662== For counts of detected and suppressed errors, rerun with: -v
+==662== Use --track-origins=yes to see where uninitialised values come from
+==662== ERROR SUMMARY: 28 errors from 10 contexts (suppressed: 0 from 0)
 Testcase 2: Trying hands with pairs
- Checking the output 
-Line_63_did_not_match
-Line_68_did_not_match
-Your file did not match the expected ouput
- - Output did not match, testcase failed
-Hand 1:								Hand 1:
---------							--------
-Ac As Kh 9d 8c 3h 						Ac As Kh 9d 8c 3h 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Ac As Kh 9d 8c 			 - 5 cards used for hand: Ac As Kh 9d 8c 
-Hand 2:								Hand 2:
---------							--------
-Kc Ks Js 9h 2c 							Kc Ks Js 9h 2c 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 0 / value K)	 - The most of a kind is 2 of a kind (at index 0 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Kc Ks Js 9h 2c 			 - 5 cards used for hand: Kc Ks Js 9h 2c 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Ac As Qd 9d 8c 3h 						Ac As Qd 9d 8c 3h 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Ac As Qd 9d 8c 			 - 5 cards used for hand: Ac As Qd 9d 8c 
-Hand 2:								Hand 2:
---------							--------
-Ad Ah Qh Js 9c 2h 						Ad Ah Qh Js 9c 2h 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Ad Ah Qh Js 9c 			 - 5 cards used for hand: Ad Ah Qh Js 9c 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 2 wins!							Hand 2 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-As Kd Kh 7d 3s 2c 						As Kd Kh 7d 3s 2c 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 1 / value K)	 - The most of a kind is 2 of a kind (at index 1 / value K)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Kd Kh As 7d 3s 			 - 5 cards used for hand: Kd Kh As 7d 3s 
-Hand 2:								Hand 2:
---------							--------
-As Kh Qc Qd 9d 5c 						As Kh Qc Qd 9d 5c 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 2 / value Q)	 - The most of a kind is 2 of a kind (at index 2 / value Q)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: Qc Qd As Kh 9d 			 - 5 cards used for hand: Qc Qd As Kh 9d 
-Comparison : 							Comparison : 
---------------							--------------
-Hand 1 wins!							Hand 1 wins!
-============================					============================
-Hand 1:								Hand 1:
---------							--------
-Js 9h 7c 5c 5d 4s 					      |	Js 9h 7c 5d 5c 4s 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 3 / value 5)	 - The most of a kind is 2 of a kind (at index 3 / value 5)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: 5c 5d Js 9h 7c 		      |	 - 5 cards used for hand: 5d 5c Js 9h 7c 
-Hand 2:								Hand 2:
---------							--------
-Jd 9h 7c 6h 5h 5s 						Jd 9h 7c 6h 5h 5s 
- - No flush							 - No flush
- - The most of a kind is 2 of a kind (at index 4 / value 5)	 - The most of a kind is 2 of a kind (at index 4 / value 5)
- - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: PAIR				 - evaluate_hand's ranking: PAIR
- - 5 cards used for hand: 5h 5s Jd 9h 7c 			 - 5 cards used for hand: 5h 5s Jd 9h 7c 
-Comparison : 							Comparison : 
---------------							--------------
-Tie								Tie
-============================					============================
+Valgrind returned an error status
+==667== Memcheck, a memory error detector
+==667== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==667== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==667== Command: ./test-eval inp.2.txt
+==667== Parent PID: 666
+==667== 
+==667== Use of uninitialised value of size 8
+==667==    at 0x400C01: print_hand (deck.c:10)
+==667==    by 0x402A7E: describe_hand (test-eval.c:74)
+==667==    by 0x402C7E: main (test-eval.c:119)
+==667== 
+==667== Invalid read of size 8
+==667==    at 0x400C01: print_hand (deck.c:10)
+==667==    by 0x402A7E: describe_hand (test-eval.c:74)
+==667==    by 0x402C7E: main (test-eval.c:119)
+==667==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==667== 
+==667== 
+==667== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==667==  Access not within mapped region at address 0x0
+==667==    at 0x400C01: print_hand (deck.c:10)
+==667==    by 0x402A7E: describe_hand (test-eval.c:74)
+==667==    by 0x402C7E: main (test-eval.c:119)
+==667==  If you believe this happened as a result of a stack
+==667==  overflow in your program's main thread (unlikely but
+==667==  possible), you can try to increase the size of the
+==667==  main thread stack using the --main-stacksize= flag.
+==667==  The main thread stack size used in this run was 8388608.
+==667== 
+==667== HEAP SUMMARY:
+==667==     in use at exit: 880 bytes in 17 blocks
+==667==   total heap usage: 32 allocs, 15 frees, 9,360 bytes allocated
+==667== 
+==667== LEAK SUMMARY:
+==667==    definitely lost: 0 bytes in 0 blocks
+==667==    indirectly lost: 0 bytes in 0 blocks
+==667==      possibly lost: 0 bytes in 0 blocks
+==667==    still reachable: 880 bytes in 17 blocks
+==667==         suppressed: 0 bytes in 0 blocks
+==667== Rerun with --leak-check=full to see details of leaked memory
+==667== 
+==667== For counts of detected and suppressed errors, rerun with: -v
+==667== Use --track-origins=yes to see where uninitialised values come from
+==667== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Line_3_did_not_match
@@ -674,70 +662,70 @@ Tie							      |	Hand 1 wins!
 ============================					============================
 Testcase 6: Trying hands with flushes
 Valgrind returned an error status
-==473== Memcheck, a memory error detector
-==473== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==473== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==473== Command: ./test-eval inp.6.txt
-==473== Parent PID: 472
-==473== 
-==473== Use of uninitialised value of size 8
-==473==    at 0x401BED: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x402A28: describe_hand (test-eval.c:68)
-==473==    by 0x402C53: main (test-eval.c:116)
-==473== 
-==473== Conditional jump or move depends on uninitialised value(s)
-==473==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x402A28: describe_hand (test-eval.c:68)
-==473==    by 0x402C53: main (test-eval.c:116)
-==473== 
-==473== Use of uninitialised value of size 8
-==473==    at 0x401BED: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x402A28: describe_hand (test-eval.c:68)
-==473==    by 0x402C73: main (test-eval.c:119)
-==473== 
-==473== Conditional jump or move depends on uninitialised value(s)
-==473==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x402A28: describe_hand (test-eval.c:68)
-==473==    by 0x402C73: main (test-eval.c:119)
-==473== 
-==473== Use of uninitialised value of size 8
-==473==    at 0x401BED: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x401CFD: compare_hands (eval.c:228)
-==473==    by 0x402CC8: main (test-eval.c:124)
-==473== 
-==473== Conditional jump or move depends on uninitialised value(s)
-==473==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x401CFD: compare_hands (eval.c:228)
-==473==    by 0x402CC8: main (test-eval.c:124)
-==473== 
-==473== Use of uninitialised value of size 8
-==473==    at 0x401BED: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x401D58: compare_hands (eval.c:229)
-==473==    by 0x402CC8: main (test-eval.c:124)
-==473== 
-==473== Conditional jump or move depends on uninitialised value(s)
-==473==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==473==    by 0x402640: evaluate_hand (eval.c:388)
-==473==    by 0x401D58: compare_hands (eval.c:229)
-==473==    by 0x402CC8: main (test-eval.c:124)
-==473== 
-==473== 
-==473== HEAP SUMMARY:
-==473==     in use at exit: 0 bytes in 0 blocks
-==473==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
-==473== 
-==473== All heap blocks were freed -- no leaks are possible
-==473== 
-==473== For counts of detected and suppressed errors, rerun with: -v
-==473== Use --track-origins=yes to see where uninitialised values come from
-==473== ERROR SUMMARY: 88 errors from 8 contexts (suppressed: 0 from 0)
+==711== Memcheck, a memory error detector
+==711== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==711== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==711== Command: ./test-eval inp.6.txt
+==711== Parent PID: 710
+==711== 
+==711== Use of uninitialised value of size 8
+==711==    at 0x401BED: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x402A33: describe_hand (test-eval.c:68)
+==711==    by 0x402C5E: main (test-eval.c:116)
+==711== 
+==711== Conditional jump or move depends on uninitialised value(s)
+==711==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x402A33: describe_hand (test-eval.c:68)
+==711==    by 0x402C5E: main (test-eval.c:116)
+==711== 
+==711== Use of uninitialised value of size 8
+==711==    at 0x401BED: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x402A33: describe_hand (test-eval.c:68)
+==711==    by 0x402C7E: main (test-eval.c:119)
+==711== 
+==711== Conditional jump or move depends on uninitialised value(s)
+==711==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x402A33: describe_hand (test-eval.c:68)
+==711==    by 0x402C7E: main (test-eval.c:119)
+==711== 
+==711== Use of uninitialised value of size 8
+==711==    at 0x401BED: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x401D08: compare_hands (eval.c:228)
+==711==    by 0x402CD3: main (test-eval.c:124)
+==711== 
+==711== Conditional jump or move depends on uninitialised value(s)
+==711==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x401D08: compare_hands (eval.c:228)
+==711==    by 0x402CD3: main (test-eval.c:124)
+==711== 
+==711== Use of uninitialised value of size 8
+==711==    at 0x401BED: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x401D63: compare_hands (eval.c:229)
+==711==    by 0x402CD3: main (test-eval.c:124)
+==711== 
+==711== Conditional jump or move depends on uninitialised value(s)
+==711==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==711==    by 0x40264B: evaluate_hand (eval.c:388)
+==711==    by 0x401D63: compare_hands (eval.c:229)
+==711==    by 0x402CD3: main (test-eval.c:124)
+==711== 
+==711== 
+==711== HEAP SUMMARY:
+==711==     in use at exit: 0 bytes in 0 blocks
+==711==   total heap usage: 898 allocs, 898 frees, 25,784 bytes allocated
+==711== 
+==711== All heap blocks were freed -- no leaks are possible
+==711== 
+==711== For counts of detected and suppressed errors, rerun with: -v
+==711== Use --track-origins=yes to see where uninitialised values come from
+==711== ERROR SUMMARY: 88 errors from 8 contexts (suppressed: 0 from 0)
 Testcase 7: Trying hands with full houses
  Checking the output 
 Line_3_did_not_match
@@ -1269,69 +1257,73 @@ Hand 1 wins!						      <
 ============================				      <
 Testcase 10: Trying each type of hand ranking
 Valgrind returned an error status
-==517== Memcheck, a memory error detector
-==517== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==517== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==517== Command: ./test-eval inp.10.txt
-==517== Parent PID: 516
-==517== 
-==517== Use of uninitialised value of size 8
-==517==    at 0x401BED: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x402A28: describe_hand (test-eval.c:68)
-==517==    by 0x402C73: main (test-eval.c:119)
-==517== 
-==517== Conditional jump or move depends on uninitialised value(s)
-==517==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x402A28: describe_hand (test-eval.c:68)
-==517==    by 0x402C73: main (test-eval.c:119)
-==517== 
-==517== Use of uninitialised value of size 8
-==517==    at 0x401BED: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x401D58: compare_hands (eval.c:229)
-==517==    by 0x402CC8: main (test-eval.c:124)
-==517== 
-==517== Conditional jump or move depends on uninitialised value(s)
-==517==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x401D58: compare_hands (eval.c:229)
-==517==    by 0x402CC8: main (test-eval.c:124)
-==517== 
-==517== Use of uninitialised value of size 8
-==517==    at 0x401BED: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x402A28: describe_hand (test-eval.c:68)
-==517==    by 0x402C53: main (test-eval.c:116)
-==517== 
-==517== Conditional jump or move depends on uninitialised value(s)
-==517==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x402A28: describe_hand (test-eval.c:68)
-==517==    by 0x402C53: main (test-eval.c:116)
-==517== 
-==517== Use of uninitialised value of size 8
-==517==    at 0x401BED: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x401CFD: compare_hands (eval.c:228)
-==517==    by 0x402CC8: main (test-eval.c:124)
-==517== 
-==517== Conditional jump or move depends on uninitialised value(s)
-==517==    at 0x401BF1: build_hand_from_match (eval.c:211)
-==517==    by 0x402640: evaluate_hand (eval.c:388)
-==517==    by 0x401CFD: compare_hands (eval.c:228)
-==517==    by 0x402CC8: main (test-eval.c:124)
-==517== 
-==517== 
-==517== HEAP SUMMARY:
-==517==     in use at exit: 0 bytes in 0 blocks
-==517==   total heap usage: 3,988 allocs, 3,988 frees, 80,704 bytes allocated
-==517== 
-==517== All heap blocks were freed -- no leaks are possible
-==517== 
-==517== For counts of detected and suppressed errors, rerun with: -v
-==517== Use --track-origins=yes to see where uninitialised values come from
-==517== ERROR SUMMARY: 64 errors from 8 contexts (suppressed: 0 from 0)
+==755== Memcheck, a memory error detector
+==755== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==755== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==755== Command: ./test-eval inp.10.txt
+==755== Parent PID: 754
+==755== 
+==755== Use of uninitialised value of size 8
+==755==    at 0x401BED: build_hand_from_match (eval.c:211)
+==755==    by 0x40264B: evaluate_hand (eval.c:388)
+==755==    by 0x402A33: describe_hand (test-eval.c:68)
+==755==    by 0x402C7E: main (test-eval.c:119)
+==755== 
+==755== Conditional jump or move depends on uninitialised value(s)
+==755==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==755==    by 0x40264B: evaluate_hand (eval.c:388)
+==755==    by 0x402A33: describe_hand (test-eval.c:68)
+==755==    by 0x402C7E: main (test-eval.c:119)
+==755== 
+==755== Use of uninitialised value of size 8
+==755==    at 0x401BED: build_hand_from_match (eval.c:211)
+==755==    by 0x40264B: evaluate_hand (eval.c:388)
+==755==    by 0x401D63: compare_hands (eval.c:229)
+==755==    by 0x402CD3: main (test-eval.c:124)
+==755== 
+==755== Conditional jump or move depends on uninitialised value(s)
+==755==    at 0x401BF1: build_hand_from_match (eval.c:211)
+==755==    by 0x40264B: evaluate_hand (eval.c:388)
+==755==    by 0x401D63: compare_hands (eval.c:229)
+==755==    by 0x402CD3: main (test-eval.c:124)
+==755== 
+==755== Use of uninitialised value of size 8
+==755==    at 0x400C01: print_hand (deck.c:10)
+==755==    by 0x402A7E: describe_hand (test-eval.c:74)
+==755==    by 0x402C7E: main (test-eval.c:119)
+==755== 
+==755== Invalid read of size 8
+==755==    at 0x400C01: print_hand (deck.c:10)
+==755==    by 0x402A7E: describe_hand (test-eval.c:74)
+==755==    by 0x402C7E: main (test-eval.c:119)
+==755==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==755== 
+==755== 
+==755== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==755==  Access not within mapped region at address 0x0
+==755==    at 0x400C01: print_hand (deck.c:10)
+==755==    by 0x402A7E: describe_hand (test-eval.c:74)
+==755==    by 0x402C7E: main (test-eval.c:119)
+==755==  If you believe this happened as a result of a stack
+==755==  overflow in your program's main thread (unlikely but
+==755==  possible), you can try to increase the size of the
+==755==  main thread stack using the --main-stacksize= flag.
+==755==  The main thread stack size used in this run was 8388608.
+==755== 
+==755== HEAP SUMMARY:
+==755==     in use at exit: 880 bytes in 17 blocks
+==755==   total heap usage: 210 allocs, 193 frees, 12,716 bytes allocated
+==755== 
+==755== LEAK SUMMARY:
+==755==    definitely lost: 0 bytes in 0 blocks
+==755==    indirectly lost: 0 bytes in 0 blocks
+==755==      possibly lost: 0 bytes in 0 blocks
+==755==    still reachable: 880 bytes in 17 blocks
+==755==         suppressed: 0 bytes in 0 blocks
+==755== Rerun with --leak-check=full to see details of leaked memory
+==755== 
+==755== For counts of detected and suppressed errors, rerun with: -v
+==755== Use --track-origins=yes to see where uninitialised values come from
+==755== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
