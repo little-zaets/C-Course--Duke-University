@@ -41,6 +41,7 @@ void test_straight()
     
 }
 */
+/*
 void test_build_hand()
 {
     size_t i;
@@ -95,11 +96,11 @@ void test_build_hand()
     }
 
 }
-
+*/
 int main ()
 {
     /*test_straight();*/
-    test_build_hand();
+    //test_build_hand();
 
     return 0;
 }
