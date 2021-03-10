@@ -48,17 +48,17 @@ char value_letter(card_t c)
     switch (c.value)
     {
       case 10:
-	return value_letter;
+	      return value_letter;
       case VALUE_JACK:
-	return 'J';
+	      return 'J';
       case VALUE_QUEEN:
-	return 'Q';
+	      return 'Q';
       case VALUE_KING:
-	return 'K';
+	      return 'K';
       case VALUE_ACE:
-	return 'A';
+	      return 'A';
       default:
-	return 'x';
+	      return 'x';
     }
   }
   return value_letter;
@@ -90,48 +90,48 @@ void print_card(card_t c)
 card_t card_from_letters(char value_let, char suit_let)
 {
   card_t temp;
-  if ( '2' <= value_let && value_let <= '9' )
-    {
-      temp.value = value_let - '0';
-    }
+  if ('2' <= value_let && value_let <= '9')
+  {
+    temp.value = value_let - '0';
+  }
   else
+  {
+    switch (value_let)
     {
-      switch (value_let)
-	{
-	case '0':
-	  temp.value = 10;
-	  break;
-	case 'J':
-	  temp.value = VALUE_JACK;
-	  break;
-	case 'Q':
-	  temp.value = VALUE_QUEEN;
-	  break;
-	case 'K':
-	  temp.value = VALUE_KING;
-	  break;
-	case 'A':
-	  temp.value = VALUE_ACE;
-	  break;
-	}
+      case '0':
+        temp.value = 10;
+        break;
+      case 'J':
+        temp.value = VALUE_JACK;
+        break;
+      case 'Q':
+        temp.value = VALUE_QUEEN;
+        break;
+      case 'K':
+        temp.value = VALUE_KING;
+        break;
+      case 'A':
+        temp.value = VALUE_ACE;
+        break;
     }
+  }
   switch (suit_let)
-    {
-  case 's':
-    temp.suit = SPADES;
-    break;
-  case 'h':
-    temp.suit = HEARTS;
-    break;
-  case 'd':
-    temp.suit = DIAMONDS;
-    break;
-  case 'c':
-    temp.suit = CLUBS;
-    break;
-  default:
-    temp.suit = NUM_SUITS;
-    }
+  {
+    case 's':
+      temp.suit = SPADES;
+      break;
+    case 'h':
+      temp.suit = HEARTS;
+      break;
+    case 'd':
+      temp.suit = DIAMONDS;
+      break;
+    case 'c':
+      temp.suit = CLUBS;
+      break;
+    default:
+      temp.suit = NUM_SUITS;
+  }
   assert_card_valid(temp);
   return temp;
 }

@@ -4,6 +4,7 @@
 #include "deck.h"
 void print_hand(deck_t *hand)
 {
+  //assert(hand);
   size_t i;
   for(i = 0; i < hand->n_cards; ++i)
     {
@@ -14,6 +15,7 @@ void print_hand(deck_t *hand)
 
 int deck_contains(deck_t *d, card_t c)
 {
+  assert(d);
   unsigned i;
   for(i = 0; i < d->n_cards; ++i)
     {
@@ -27,6 +29,7 @@ int deck_contains(deck_t *d, card_t c)
 
 void randomize(deck_t *deck)
 {
+  assert(deck);
   unsigned i;
   unsigned r1;
   unsigned r2;
@@ -49,6 +52,7 @@ void shuffle(deck_t *d)
 
 void assert_full_deck(deck_t *d)
 {
+  assert(d);
   unsigned i;
   int contains_card;
   assert(d);
