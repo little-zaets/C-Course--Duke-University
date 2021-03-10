@@ -8,3 +8,6 @@ poker: $(GIVEN_OBJS) $(MY_OBJS)
 	gcc -o poker -ggdb3  $(MY_OBJS) $(GIVEN_OBJS)
 clean:
 	rm -f test poker cards.o my-test-main.o *~
+
+my-test-eval: deck-c4.o eval-c4.o $(MY_OBJS) my-test-eval.o
+	gcc -no-pie -o my-test-eval -ggdb3 deck-c4.o eval-c4.o $(MY_OBJS) my-test-eval.o
