@@ -1,0 +1,36 @@
+Testcase 1: Trying hands with nothing
+Kc Ac Jh 8s 9c 2s ; Ah Kh 0s 7c 8h 3c
+Kc Ac Jh 8s 9c 2s 3h; Ah Kh 0s 7c 8h 3c 2h
+
+
+Testcase 3: Trying hands with 2 pairs
+Ac As Kc Kh 4d 2h ; Ac As Kh Kc 4d 3h
+Ad Ah Kd Ks 3h 2h ; Ad Ah Kd Ks 3h 2d
+Kc Ks Qc Qh 4d 2c ; Kc Ks Qc Qh 4d 3c 
+Ad Ah Jd Js 3h 2d ; Ad Ah Jd Js 3h 2c
+Kc Ks Qc Qh 4d 
+
+Testcase 4: Trying hands with 3 of a kind
+Hand 1:								Hand 1:
+--------							--------
+Jh 0s 9c 8s 7c 4c 3d 						Jh 0s 9c 8s 7c 4c 3d 
+ - No flush							 - No flush
+ - Straight at index 0						 - Straight at index 0
+ - The most of a kind is 1 of a kind (at index 0 / value J)	 - The most of a kind is 1 of a kind (at index 0 / value J)
+ - No secondary pair						 - No secondary pair
+ - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
+ - 5 cards used for hand: Jh 0s 9c 8s 7c 			 - 5 cards used for hand: Jh 0s 9c 8s 7c 
+Hand 2:								Hand 2:
+--------							--------
+Jh 0s 9c 8s 7c 6c 5d 						Jh 0s 9c 8s 7c 6c 5d 
+ - No flush							 - No flush
+ - Straight at index 0					      <
+ - Straight at index 1					      <
+ - Straight at index 2						 - Straight at index 2
+ - The most of a kind is 1 of a kind (at index 0 / value J)	 - The most of a kind is 1 of a kind (at index 0 / value J)
+ - No secondary pair						 - No secondary pair
+ - evaluate_hand's ranking: STRAIGHT				 - evaluate_hand's ranking: STRAIGHT
+ - 5 cards used for hand: Jh 0s 9c 8s 7c 		      |	 - 5 cards used for hand: 9c 8s 7c 6c 5d 
+Comparison : 							Comparison : 
+--------------							--------------
+Tie							      |	Hand 1 wins!

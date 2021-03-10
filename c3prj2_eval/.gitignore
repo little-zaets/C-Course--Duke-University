@@ -2,3 +2,6 @@ deck.o
 eval.o
 cards.o
 test-eval
+my_test_eval.o
+my-test-eval
+.vscode/
