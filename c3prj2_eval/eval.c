@@ -37,7 +37,7 @@ suit_t flush_suit(deck_t *hand)
         suit_count++;
       }
     }
-    if (5 == suit_count)
+    if (5 <= suit_count)
     {
       return hand->cards[i]->suit;
     }
@@ -105,6 +105,7 @@ ssize_t find_secondary_pair(deck_t *hand,
 int is_straight_at_length_n(deck_t *hand, size_t index, suit_t fs, size_t n)
 {
   size_t i;
+  size_t j;
   int count = 1;
   int flush_count = 1;
   assert(hand);
@@ -114,25 +115,29 @@ int is_straight_at_length_n(deck_t *hand, size_t index, suit_t fs, size_t n)
     {
       return 0;
     }
-    for (i = index; i < n - 1; ++i)
+    for(i = index; i < n; ++i)
     {
-      if (hand->cards[i]->value == hand->cards[i + 1]->value ||
-          hand->cards[i]->suit != fs)
+      for(j = i + 1; j <= n - 1; ++j )
       {
-        continue;
-      }
-      if (hand->cards[i]->value == hand->cards[i + 1]->value + 1 &&
-          hand->cards[i]->suit == fs)
-      {
-        ++flush_count;
-        if (5 == flush_count)
+        if ( hand->cards[i]->value == hand->cards[j]->value )
         {
-          break;
+          if ( fs == hand->cards[i]->suit )
+          {
+            ++flush_count;
+            i = j;
+            break;
+          }
         }
-      }
-      else
-      {
-        break;
+        if ( hand->cards[i]->value == hand->cards[j]->value + 1 &&
+              hand->cards[i]->suit == hand->cards[j]->suit && hand->cards[i]->suit == fs )
+        {
+          ++flush_count;
+          i = j;
+        }
+        if ( 5 == flush_count )
+        {
+          return flush_count;
+        }
       }
     }
     return flush_count;
@@ -221,6 +226,13 @@ hand_eval_t build_hand_from_match(deck_t *hand,
         ans.cards[j] = hand->cards[i];
         ++j;
       }
+    }
+  }
+  else
+  {
+    for(i = 0; i < 5; ++i, ++j)
+    {
+      ans.cards[j] = hand->cards[i];
     }
   }
   return ans;

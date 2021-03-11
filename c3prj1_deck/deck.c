@@ -4,7 +4,7 @@
 #include "deck.h"
 void print_hand(deck_t *hand)
 {
-  //assert(hand);
+  assert(hand);
   size_t i;
   for(i = 0; i < hand->n_cards; ++i)
     {
