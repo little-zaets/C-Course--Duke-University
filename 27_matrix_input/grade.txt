@@ -1,0 +1,10 @@
+Grading at Mon Mar 15 15:16:18 UTC 2021
+Attempting to compile rotateMatrix.c
+rotateMatrix.c: In function ‘main’:
+rotateMatrix.c:94:12: error: unused variable ‘i’ [-Werror=unused-variable]
+     size_t i;
+            ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
