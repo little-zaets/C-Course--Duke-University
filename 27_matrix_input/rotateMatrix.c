@@ -10,11 +10,6 @@ void rotateMatrix(char matrix[10][12], size_t n)
     size_t j;
     size_t size = n;
 
-   /* for (i = 0; i < 10; ++i)
-    {
-        printf("%s", matrix[i]);
-    }*/
-
     for (i = 0; i < size; ++i)
     {
         for (j = 0; j < size; ++j)
@@ -41,11 +36,25 @@ void checkInput(FILE *input)
 
     for (i = 0; i < 10; ++i)
     {
-        fgets(matrix[i], 12, input);
-    }
-    for (i = 0; i < 10; ++i)
-    {
-        printf("%s", matrix[i]);
+       if( NULL == fgets(matrix[i], 12, input) )
+       {
+           if ( feof(input) )
+           {
+                fprintf(stderr, "End Of File reached\n");
+                exit(EXIT_FAILURE);
+           }
+           if ( ferror(input) )
+           {
+               fprintf(stderr, "Input error occurred");
+               exit(EXIT_FAILURE);
+           }
+       }
+       ptr = strchr(matrix[i], '\n');
+       if ( NULL == ptr || ptr - matrix[i] != 10 )
+       {
+           fprintf(stderr, "Invalid number of characters in line\n");
+           exit(EXIT_FAILURE);
+       }
     }
     rotateMatrix(matrix, 10);
     for (i = 0; i < 10; ++i)
