@@ -91,7 +91,6 @@ int main(int argc, char **argv)
 {
     char matrix[10][12];
     int error_code = 0;
-    size_t i;
     if (2 != argc)
     {
         fprintf(stderr, "Not enough arguments\n");
