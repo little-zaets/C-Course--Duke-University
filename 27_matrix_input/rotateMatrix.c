@@ -14,11 +14,34 @@ void printMatrix(char matrix[10][12])
 
 int findFileSize(const char *filepath)
 {
+    int c;
+    int char_count = 0;
     FILE *input = fopen(filepath, "r");
     if ( NULL == input )
     {
-        fprintf(stderr,"File not found");
+        fprintf(stderr,"File does not exist\n");
         exit(EXIT_FAILURE);
+    }
+    while ( (c = fgetc(input)) != EOF )
+    {   
+        ++char_count;
+        if ( '\n' == c )
+        {
+            if ( char_count > 11 )
+            {
+                fprintf(stderr, "Line too long\n");
+                exit(EXIT_FAILURE);
+            }
+            if ( char_count < 11 )
+            {
+                fprintf(stderr, "Line too short\n");
+                exit(EXIT_FAILURE);
+            }
+            else
+            {
+                char_count = 0;
+            }
+        }
     }
     fseek(input, 0L, SEEK_END);
     int res = ftell(input);
@@ -63,68 +86,42 @@ int fillMatrix(const char *filepath, char matrix[10][12])
     long int size = findFileSize(filepath);
     if ( 0 == size )
     {
-        fprintf(stderr,"File is empty\n");
-        error_code = EXIT_FAILURE;
-        goto exit;
+        fprintf(stderr,"File is blank\n");
+        exit(EXIT_FAILURE);
     }
     if ( 110 > size )
     {
         fprintf(stderr, "File too short\n");
-        error_code = EXIT_FAILURE;
-        goto exit;
+        exit(EXIT_FAILURE);
     }
     if ( 110 < size )
     {
         fprintf(stderr, "File too long\n");
-        error_code = EXIT_FAILURE;
-        goto exit;
+        exit(EXIT_FAILURE);
     }
     
     FILE *input = fopen(filepath, "r");
     if ( NULL == input )
     {
         perror("Failed to open file");
-        error_code = EXIT_FAILURE;
-        goto exit;
+        exit(EXIT_FAILURE);
     }
-
     for (i = 0; i < 10; ++i)
     {
-        if (NULL == fgets(matrix[i], 12, input))
+        if ( ptr == fgets(matrix[i], 12, input) )
         {
             if ( feof(input) )
             {
                 fprintf(stderr, "End Of File reached\n");
-                error_code = EXIT_FAILURE;
-                goto exit;
+                exit(EXIT_FAILURE);
             }
             if ( ferror(input) )
             {
                 fprintf(stderr, "Input error occurred");
-                error_code = EXIT_FAILURE;
-                goto exit;
+                exit(EXIT_FAILURE);
             }
         }
-        ptr = strchr(matrix[i], '\n');
-        if (NULL == ptr || ptr - matrix[i] != 10)
-        {
-            fprintf(stderr, "Invalid number of characters in line\n");
-            error_code = EXIT_FAILURE;
-            goto exit;
-        }
     }
-
-exit:
-
-    if ( NULL == input )
-    {
-        return EXIT_FAILURE;
-    }
-    if ( 0 != fclose(input) )
-    {
-        perror("Failed to close the input file");
-        return EXIT_FAILURE;
-    }   
     return error_code;
 }
 
@@ -134,16 +131,24 @@ int main(int argc, char **argv)
     int error_code = 0;
     if (2 != argc)
     {
-        fprintf(stderr, "Not enough arguments\n");
-        return EXIT_FAILURE;
+        if ( 2 < argc )
+        {
+            fprintf(stderr, "Too many arguments\n");
+            return EXIT_FAILURE;
+        }
+        else
+        {
+            fprintf(stderr, "Not enough arguments\n");
+            return EXIT_FAILURE;
+        }
     }
     error_code = fillMatrix(argv[1], matrix);
     if ( 0 != error_code )
     {
-        return error_code;
+        return EXIT_FAILURE;
     }
     rotateMatrix(matrix, 10);
     printMatrix(matrix);
 
-    return error_code;
+    return 0;
 }
