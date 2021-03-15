@@ -12,6 +12,25 @@ void printMatrix(char matrix[10][12])
     }
 }
 
+int findFileSize(const char *filepath)
+{
+    FILE *input = fopen(filepath, "r");
+    if ( NULL == input )
+    {
+        fprintf(stderr,"File not found");
+        exit(EXIT_FAILURE);
+    }
+    fseek(input, 0L, SEEK_END);
+    int res = ftell(input);
+    fseek(input, 0 , SEEK_SET);
+    if ( 0 != fclose(input) )
+    {
+        perror("Failed to close the input file");
+        exit(EXIT_FAILURE);
+    }
+    return res;
+}
+
 void rotateMatrix(char matrix[10][12], size_t n)
 {
     char tempMatrix[10][10];
@@ -40,6 +59,27 @@ int fillMatrix(const char *filepath, char matrix[10][12])
     char *ptr = NULL;
     size_t i = 0;
     int error_code = 0;
+    
+    long int size = findFileSize(filepath);
+    if ( 0 == size )
+    {
+        fprintf(stderr,"File is empty\n");
+        error_code = EXIT_FAILURE;
+        goto exit;
+    }
+    if ( 110 > size )
+    {
+        fprintf(stderr, "File too short\n");
+        error_code = EXIT_FAILURE;
+        goto exit;
+    }
+    if ( 110 < size )
+    {
+        fprintf(stderr, "File too long\n");
+        error_code = EXIT_FAILURE;
+        goto exit;
+    }
+    
     FILE *input = fopen(filepath, "r");
     if ( NULL == input )
     {
@@ -52,13 +92,13 @@ int fillMatrix(const char *filepath, char matrix[10][12])
     {
         if (NULL == fgets(matrix[i], 12, input))
         {
-            if (feof(input))
+            if ( feof(input) )
             {
                 fprintf(stderr, "End Of File reached\n");
                 error_code = EXIT_FAILURE;
                 goto exit;
             }
-            if (ferror(input))
+            if ( ferror(input) )
             {
                 fprintf(stderr, "Input error occurred");
                 error_code = EXIT_FAILURE;
@@ -75,6 +115,7 @@ int fillMatrix(const char *filepath, char matrix[10][12])
     }
 
 exit:
+
     if ( NULL == input )
     {
         return EXIT_FAILURE;
@@ -83,7 +124,7 @@ exit:
     {
         perror("Failed to close the input file");
         return EXIT_FAILURE;
-    }
+    }   
     return error_code;
 }
 
