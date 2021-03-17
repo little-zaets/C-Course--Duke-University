@@ -119,7 +119,7 @@ int fillMatrix(const char *filepath, char matrix[10][12])
             {
                 fprintf(stderr, "Input error occurred");
                 exit(EXIT_FAILURE);
-            }
+            }	
         }
     }
     return error_code;

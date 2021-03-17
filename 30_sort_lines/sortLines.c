@@ -74,9 +74,24 @@ void processFile(const char *filepath)
 		perror("Failed to open file");
 		exit(EXIT_FAILURE);
 	}
-	while (0 <= getline(&line, &n, input))
+	while ( 0 <= getline(&line, &n, input) )
 	{
+		if (feof(input))
+		{
+			fprintf(stderr, "End Of File reached\n");
+			exit(EXIT_FAILURE);
+		}
+		if (ferror(input))
+		{
+			fprintf(stderr, "Input error occurred");
+			exit(EXIT_FAILURE);
+		}
 		array = realloc(array, (i + 1) * sizeof(*array));
+		if (NULL == array)
+		{
+			fprint(stderr, "Realloc failed");
+			exit(EXIT_FAILURE);
+		}
 		array[i] = line;
 		line = NULL;
 		++i;
@@ -104,6 +119,11 @@ void processInput(FILE *stream)
 			break;
 		}
 		array = realloc(array, (i + 1) * sizeof(*array));
+		if ( NULL == array)
+		{
+			fprint(stderr, "Realloc failed");
+			exit(EXIT_FAILURE);
+		}
 		array[i] = line;
 		line = NULL;
 		++i;
