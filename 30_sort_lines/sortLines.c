@@ -89,7 +89,7 @@ void processFile(const char *filepath)
 		array = realloc(array, (i + 1) * sizeof(*array));
 		if (NULL == array)
 		{
-			fprint(stderr, "Realloc failed");
+			fprintf(stderr, "Realloc failed");
 			exit(EXIT_FAILURE);
 		}
 		array[i] = line;
@@ -121,7 +121,7 @@ void processInput(FILE *stream)
 		array = realloc(array, (i + 1) * sizeof(*array));
 		if ( NULL == array)
 		{
-			fprint(stderr, "Realloc failed");
+			fprintf(stderr, "Realloc failed");
 			exit(EXIT_FAILURE);
 		}
 		array[i] = line;
