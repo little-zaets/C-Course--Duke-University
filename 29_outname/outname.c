@@ -3,30 +3,20 @@
 #include <string.h>
 #include "outname.h"
 
-char *computeOutputFileName(const char *inputName) 
+char *computeOutputFileName(const char *inputName)
 {
 	char *outputName = malloc((strlen(inputName) + 7) * sizeof(char *));
-	if ( NULL == outputName )
+	if (NULL == outputName)
 	{
 		fprintf(stderr, "Malloc failed");
+		exit(EXIT_FAILURE);
+	}
+	strcpy(outputName, inputName);
+	if (0 != strcmp(inputName, outputName))
+	{
+		fprintf(stderr, "%s copied to output file name", outputName);
 		return NULL;
 	}
-	if ( NULL != strstr(inputName, ".txt") )
-	{
-		strcpy(outputName, inputName);
-		strcat(outputName, ".counts");
-	}
-	else
-	{
-		outputName = realloc(outputName, (strlen(inputName) + 11 * sizeof(char *)));
-		if (NULL == outputName)
-		{
-			fprintf(stderr, "Realloc failed");
-			return NULL;
-		}
-		strcpy(outputName, inputName);
-		strcat(outputName, ".txt.counts");
-	}
+	strcat(outputName, ".counts");
 	return outputName;
 }
-
