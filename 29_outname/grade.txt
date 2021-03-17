@@ -1,4 +1,4 @@
-Grading at Wed Mar 17 14:19:55 UTC 2021
+Grading at Wed Mar 17 14:42:54 UTC 2021
 Attempting to compile:
 #################################################
 testcase1:
@@ -12,6 +12,8 @@ Your output is correct
 valgrind was clean
 #################################################
 testcase3:
-Your output is incorrect
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: D
+Overall Grade: A
