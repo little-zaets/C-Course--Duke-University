@@ -1,4 +1,4 @@
-CFLAGS=-ggdb3 -Wall -Werror -std=gnu99 -pedantic
+CFLAGS=-ggdb3 -Wall -Werror -std=gnu99 -pedantic -g
 sortLines: sortLines.c
 	gcc $(CFLAGS) -o sortLines sortLines.c
 
