@@ -110,6 +110,7 @@ void processInput(FILE *stream)
 	}
 	free(line);
 	sortData(array, i);
+	freeData(array, i);
 }
 
 int main(int argc, char **argv)
