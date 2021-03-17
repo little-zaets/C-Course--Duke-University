@@ -1,4 +1,4 @@
-CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3
+CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3 -g
 OBJS=outname.o outname_test.o
 PROGRAM=outname_test
 
