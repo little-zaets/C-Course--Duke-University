@@ -150,5 +150,6 @@ int main(int argc, char **argv)
     rotateMatrix(matrix, 10);
     printMatrix(matrix);
 
-    return 0;
+    return error_code;
 }
+
