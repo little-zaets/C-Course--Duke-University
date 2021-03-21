@@ -83,6 +83,7 @@ void freeKv(kvpair_t *pair)
 {
 	free(pair->key);
 	free(pair->value);
+	free(pair);
 }
 
 void freeKVs(kvarray_t *pairs)
