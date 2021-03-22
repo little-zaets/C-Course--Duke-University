@@ -67,6 +67,10 @@ kvarray_t *readKVs(const char *fname)
 			return NULL;
 		}
 		kvPairs->pairsArray[i] = parseKv(line, size);
+<<<<<<< HEAD
+=======
+		free(line);
+>>>>>>> 6484ea28fe6a9e998c79b09523a636312f203fe7
 		line = NULL;
 		++i;
 	}
