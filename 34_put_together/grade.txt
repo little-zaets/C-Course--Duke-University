@@ -1,4 +1,4 @@
-Grading at Wed Mar 24 21:29:32 UTC 2021
+Grading at Wed Mar 24 21:29:46 UTC 2021
 Attempting to compile:
 rm -f  outname.o  counts.o  main.o  kv.o count_values *~
 gcc -c -Wall -Werror -std=gnu99 -pedantic -ggdb3 outname.c
@@ -26,6 +26,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
@@ -68,6 +69,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
@@ -110,6 +112,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
@@ -152,6 +155,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
@@ -193,6 +197,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
@@ -235,6 +240,7 @@ counts.o
 count_values
 count_values.stderr
 count_values.stdout
+grade.txt
 kv.c
 kv.h
 kv.o
