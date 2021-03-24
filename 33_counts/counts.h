@@ -1,20 +1,25 @@
 #ifndef __COUNTS_H__
 #define __COUNTS_H__
-struct _one_count_t {
-  //DEFINE ME
 
+struct _one_count_t 
+{
+	char *uniqueValue;
+	size_t uniqueCount;
 };
 typedef struct _one_count_t one_count_t;
 
-struct _counts_t {
-  //DEFINE ME
+struct _counts_t 
+{
+	one_count_t **matchCounts;
+	size_t numCounts;
+	size_t unknownCount;
 };
 typedef struct _counts_t counts_t;
 
-counts_t * createCounts(void);
-void addCount(counts_t * c, const char * name);
-void printCounts(counts_t * c, FILE * outFile);
+counts_t *createCounts(void);
+void addCount(counts_t *c, const char *name);
+void printCounts(counts_t *c, FILE *outFile);
 
-void freeCounts(counts_t * c);
+void freeCounts(counts_t *c);
 
 #endif

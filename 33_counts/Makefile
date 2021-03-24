@@ -1,4 +1,4 @@
-CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3
+CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3 -g
 OBJS=counts.o counts_test.o
 PROGRAM=counts_test
 

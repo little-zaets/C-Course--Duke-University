@@ -67,10 +67,7 @@ kvarray_t *readKVs(const char *fname)
 			return NULL;
 		}
 		kvPairs->pairsArray[i] = parseKv(line, size);
-<<<<<<< HEAD
-=======
 		free(line);
->>>>>>> 6484ea28fe6a9e998c79b09523a636312f203fe7
 		line = NULL;
 		++i;
 	}
@@ -83,7 +80,7 @@ kvarray_t *readKVs(const char *fname)
 	}
 	return kvPairs;
 }
-void freeKv(kvpair_t *pair) 
+void freeKV(kvpair_t *pair) 
 {
 	free(pair->key);
 	free(pair->value);
@@ -95,7 +92,7 @@ void freeKVs(kvarray_t *pairs)
 	size_t i;
 	for(i = 0; i < pairs->numPairs; ++i)
 	{
-		freeKv(pairs->pairsArray[i]);
+		freeKV(pairs->pairsArray[i]);
 	}
 	free(pairs->pairsArray);
 	free(pairs);
