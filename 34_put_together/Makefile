@@ -1,4 +1,4 @@
-CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3
+CFLAGS=-Wall -Werror -std=gnu99 -pedantic -ggdb3 -g
 SRCS=$(wildcard *.c)
 OBJS=$(patsubst %.c, %.o, $(SRCS))
 PROGRAM=count_values

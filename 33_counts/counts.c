@@ -92,8 +92,8 @@ void printCounts(counts_t *c, FILE *outFile)
 	{
 		fprintf(outFile, "%s: %lu\n", c->matchCounts[i]->uniqueValue, c->matchCounts[i]->uniqueCount);
 	}
-	if(0 != c->unknownCount) 
+	if (0 != c->unknownCount) 
 	{
-		fprintf(outFile, "<unknown>: %lu\n", c->unknownCount);
+		fprintf(outFile, "<unknown> : %lu\n", c->unknownCount);
 	}
 }
