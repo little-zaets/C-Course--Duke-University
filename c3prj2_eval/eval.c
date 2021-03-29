@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 int card_ptr_comp(const void *vp1, const void *vp2)
 {
@@ -271,14 +272,11 @@ unsigned *get_match_counts(deck_t *hand)
 	size_t count = 1;
 	assert(hand);
 	unsigned *match_counts = malloc(sizeof(*match_counts) * hand->n_cards);
+	memset(match_counts, 0, sizeof(*match_counts) * hand->n_cards);
 	assert(match_counts && "malloc failed for match_counts");
 	for (i = 0; i < hand->n_cards - 1; ++i)
 	{
-		if (hand->cards[i]->value == hand->cards[i + 1]->value)
-		{
-			++count;
-		}
-		else
+		if (hand->cards[i]->value != hand->cards[i + 1]->value)
 		{
 			for ( ; j < i + 1; ++j)
 			{
@@ -286,8 +284,18 @@ unsigned *get_match_counts(deck_t *hand)
 			}
 			count = 1;
 		}
+		if (hand->cards[i]->value == hand->cards[i + 1]->value)
+		{
+			++count;
+		}
 	}
-	match_counts[j] = count;
+
+	
+	for (; j < hand->n_cards; ++j)
+	{
+		match_counts[j] = count;
+	}
+	
 	return match_counts;
 }
 
