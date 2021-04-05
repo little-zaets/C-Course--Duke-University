@@ -71,7 +71,7 @@ In input.c, write the function:
  - deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc);
    This function reads the input from f.  Recall that the input
    file has one hand per line (and that we represent a hand
-   with a deck_t).  You should allocate a deck_t for each hand
+   with a deck_t).  You should allocate a deck_t for each hand	
    and place it into an array of pointers to deck_ts, which is your
    answer.
    This function needs to tell its caller how many hands it read.
