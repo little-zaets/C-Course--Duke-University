@@ -26,20 +26,25 @@ int main(int argc, char **argv)
 	for (i = 0; i < n_hands; ++i)
 	{
 		print_hand(hands[i]);
+		printf("\n");
 	}
 	printf("\n");
 	deck_t *deck = build_remaining_deck(hands, n_hands);
 	print_hand(deck);
 	printf("\n");
 	shuffle(deck);
+	printf("shuffled deck: \n");
 	print_hand(deck);
+	printf("\n");
 	future_cards_from_deck(deck, fc);
 	free_deck(deck);
+	printf("hands after shuffle: \n");
 	for (i = 0; i < n_hands; ++i)
 	{
 		print_hand(hands[i]);
+		printf("\n");
 	}
-	
+
 	for (i = 0; i < n_hands; ++i)
 	{
 		free_deck(hands[i]);

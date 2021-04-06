@@ -28,18 +28,18 @@ deck_t *hand_from_string(const char *str, future_cards_t *fc)
 		}
 		for (j = i + 1; j < len; ++j)
 		{
-			if (isspace(str[j + 1]) && isalnum(str[i]))
-			{
-				card_t card = card_from_letters(str[i], str[j]);
-				add_card_to(hand, card);
-			}
 			if ('?' == str[i])
 			{
 				size_t index = atoi(&str[j]);
 				card_t *c = add_empty_card(hand);
-				add_future_card(fc, index, c);
+				add_future_card(fc, index, c);				
 			}
-			i = j;
+			else if (isspace(str[j + 1]) && isalnum(str[i]) && isalpha(str[j]))
+			{
+				card_t card = card_from_letters(str[i], str[j]);
+				add_card_to(hand, card);
+			}
+				i = j;
 		}
 	}
 	return hand;

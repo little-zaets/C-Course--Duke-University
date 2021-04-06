@@ -35,6 +35,8 @@ void add_future_card(future_cards_t *fc, size_t index, card_t *ptr)
 void future_cards_from_deck(deck_t *deck, future_cards_t *fc)
 {
 	assert_full_deck(deck);
+	assert(fc->n_decks && "fc->n_decks is empty");
+	assert(fc->n_decks < deck->n_cards && "too many unknown cards");
 	size_t i;
 	size_t j;
 	for (i = 0; i < fc->n_decks; ++i)
