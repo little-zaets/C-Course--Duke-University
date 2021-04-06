@@ -144,6 +144,7 @@ void free_deck(deck_t *deck)
 	}
 	free(deck->cards);
 	deck->cards = NULL;
+	deck->n_cards = 0;
 	free(deck);
 	deck = NULL;
 }

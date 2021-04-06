@@ -38,6 +38,11 @@ int main(int argc, char **argv)
 	printf("\n");
 	future_cards_from_deck(deck, fc);
 	free_deck(deck);
+	deck = build_remaining_deck(hands, n_hands);
+	printf("remaining deck: \n");
+	print_hand(deck);
+	printf("\n");
+	free_deck(deck);
 	printf("hands after shuffle: \n");
 	for (i = 0; i < n_hands; ++i)
 	{
