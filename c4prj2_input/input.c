@@ -8,30 +8,30 @@
 void stripWhiteSpace(char *str)
 {
 	char *p = strchr(str, '\n');
-	if (p != NULL)
+	if (NULL == p)
 	{
-		*p = '\0';
+		p = strchr(str, '\t');
 	}
+	*p = '\0';
 }
 
 deck_t *hand_from_string(const char *str, future_cards_t *fc)
 {
-	if (*str == '\0')
+	size_t len = strlen(str);
+	if ('\0' == *str || len < 2)
 	{
-		fprintf(stderr, "hand is empty\n");
-		exit(EXIT_FAILURE);
+		return NULL;
 	}
 	size_t i;
 	size_t j;
 	deck_t *hand = create_deck();
-	size_t len = strlen(str);
 	for (i = 0; i < len - 1; ++i)
 	{
-		if (!isalnum(str[i]))
+		if (isspace(str[i]))
 		{
 			continue;
 		}
-		for (j = i + 1; j < len; ++j)
+		for (j = i + 1; j < len && (j != '\n' || '\0' != j); ++j)
 		{
 			if ('?' == str[i])
 			{
@@ -59,6 +59,10 @@ deck_t **read_input(FILE *f, size_t *n_hands, future_cards_t *fc)
 	while ((size = getline(&line, &sz, f)) != EOF)
 	{
 		stripWhiteSpace(line);
+		if (0 == strlen(line))
+		{
+			continue;
+		}
 		hands = realloc(hands, (i + 1) * sizeof(*hands));
 		assert(hands && "malloc failed for hands");
 		hands[i] = hand_from_string(line, fc);

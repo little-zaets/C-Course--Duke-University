@@ -37,12 +37,12 @@ void future_cards_from_deck(deck_t *deck, future_cards_t *fc)
 	assert_full_deck(deck);
 	if (0 == fc->decks)
 	{
-		fprintf(stderr, "fc is empty");
+		fprintf(stderr, "fc is empty\n");
 		return;
 	}
 	if (fc->n_decks > deck->n_cards)
 	{
-		fprintf(stderr, "too many unknown cards");
+		fprintf(stderr, "too many unknown cards\n");
 		exit(EXIT_FAILURE);
 	}
 	size_t i;

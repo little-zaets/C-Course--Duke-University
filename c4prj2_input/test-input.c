@@ -23,13 +23,14 @@ int main(int argc, char **argv)
 	future_cards_t *fc = create_unknowns();
 	size_t n_hands = 0;
 	deck_t **hands = read_input(f, &n_hands, fc);
+	printf("n_hands: %lu\n", n_hands);
 	for (i = 0; i < n_hands; ++i)
 	{
 		print_hand(hands[i]);
 		printf("\n");
 	}
-	printf("\n");
 	deck_t *deck = build_remaining_deck(hands, n_hands);
+	printf("sorted deck: \n");
 	print_hand(deck);
 	printf("\n");
 	shuffle(deck);
@@ -37,11 +38,15 @@ int main(int argc, char **argv)
 	print_hand(deck);
 	printf("\n");
 	future_cards_from_deck(deck, fc);
+	printf("number of cards in deck: %lu\n", deck->n_cards);
+	printf("number of cards in fc->deck: %lu\n", fc->n_decks);
 	free_deck(deck);
 	deck = build_remaining_deck(hands, n_hands);
 	printf("remaining deck: \n");
 	print_hand(deck);
 	printf("\n");
+	printf("number of cards in deck: %lu\n", deck->n_cards);
+	printf("number of cards in fc->deck: %lu\n", fc->n_decks);
 	free_deck(deck);
 	printf("hands after shuffle: \n");
 	for (i = 0; i < n_hands; ++i)
