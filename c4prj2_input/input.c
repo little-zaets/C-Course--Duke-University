@@ -16,6 +16,11 @@ void stripWhiteSpace(char *str)
 
 deck_t *hand_from_string(const char *str, future_cards_t *fc)
 {
+	if (*str == '\0')
+	{
+		fprintf(stderr, "hand is empty\n");
+		exit(EXIT_FAILURE);
+	}
 	size_t i;
 	size_t j;
 	deck_t *hand = create_deck();
@@ -32,21 +37,21 @@ deck_t *hand_from_string(const char *str, future_cards_t *fc)
 			{
 				size_t index = atoi(&str[j]);
 				card_t *c = add_empty_card(hand);
-				add_future_card(fc, index, c);				
+				add_future_card(fc, index, c);
 			}
-			else if (isspace(str[j + 1]) && isalnum(str[i]) && isalpha(str[j]))
+			else if ((isspace(str[j + 1]) || str[j + 1] == '\0') && isalnum(str[i]) && isalpha(str[j]))
 			{
 				card_t card = card_from_letters(str[i], str[j]);
 				add_card_to(hand, card);
 			}
-				i = j;
+			i = j;
 		}
 	}
 	return hand;
 }
 deck_t **read_input(FILE *f, size_t *n_hands, future_cards_t *fc)
 {
-	size_t i = 0;	
+	size_t i = 0;
 	char *line = NULL;
 	size_t size = 0;
 	size_t sz = 0;
