@@ -128,8 +128,8 @@ int is_straight_at_length_n(deck_t *hand, size_t index, suit_t fs, size_t n)
             i = j;
             break;
           }
-        }
-        if ( hand->cards[i]->value == hand->cards[j]->value + 1 &&
+		}
+		if ( hand->cards[i]->value == hand->cards[j]->value + 1 &&
               hand->cards[i]->suit == hand->cards[j]->suit && hand->cards[i]->suit == fs )
         {
           ++flush_count;
@@ -140,8 +140,8 @@ int is_straight_at_length_n(deck_t *hand, size_t index, suit_t fs, size_t n)
           return flush_count;
         }
       }
-    }
-    return flush_count;
+	  break;
+ 	}
   }
   else
   {
@@ -166,6 +166,7 @@ int is_straight_at_length_n(deck_t *hand, size_t index, suit_t fs, size_t n)
     }
     return count;
   }
+  return count;
 }
 
 int is_ace_low_straight(deck_t *hand, size_t index, suit_t fs)
@@ -178,7 +179,8 @@ int is_ace_low_straight(deck_t *hand, size_t index, suit_t fs)
     if (5 == hand->cards[i]->value)
     {
       count += is_straight_at_length_n(hand, i, fs, hand->n_cards);
-    }
+	  break;
+	}
   }
   return count;
 }

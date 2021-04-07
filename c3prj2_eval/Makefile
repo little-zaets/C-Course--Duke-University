@@ -1,13 +1,11 @@
-CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99
-GIVEN_OBJS=deck-c4.o  eval-c4.o  future.o  input.o  main.o
-MY_OBJS=cards.o deck.o eval.o
+CFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu99 -g
+GIVEN_OBJS=deck.o  eval.o  future.o  input.o  main.o test-eval.o
 
-test-eval: deck.o eval.o eval-c4.o test-eval.o deck-c4.o cards.o input.o future.o
-	gcc -no-pie -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
-poker: $(GIVEN_OBJS) $(MY_OBJS)
-	gcc -o poker -ggdb3  $(MY_OBJS) $(GIVEN_OBJS)
+
+test-eval: eval.o test-eval.o deck.o cards.o input.o future.o
+	gcc -no-pie -o test-eval -ggdb3 deck.o eval.o test-eval.o cards.o input.o future.o
+poker: $(GIVEN_OBJS) 
+	gcc -o poker -ggdb3  $(GIVEN_OBJS)
 clean:
 	rm -f test poker cards.o my-test-main.o *~
 
-my-test-eval: deck-c4.o eval-c4.o $(MY_OBJS) my-test-eval.o
-	gcc -no-pie -o my-test-eval -ggdb3 deck-c4.o eval-c4.o $(MY_OBJS) my-test-eval.o
